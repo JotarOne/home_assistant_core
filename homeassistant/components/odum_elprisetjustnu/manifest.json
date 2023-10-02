@@ -1,0 +1,13 @@
+{
+  "domain": "odum_elprisetjustnu",
+  "name": "Odum - ElprisetJustNu",
+  "codeowners": ["@JotarOne"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://www.home-assistant.io/integrations/odum",
+  "homekit": {},
+  "iot_class": "cloud_polling",
+  "requirements": [],
+  "ssdp": [],
+  "zeroconf": []
+}
