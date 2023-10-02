@@ -7,6 +7,12 @@
   "containerEnv": { "DEVCONTAINER": "1" },
   "appPort": ["8123:8123"],
   "runArgs": ["-e", "GIT_EDITOR=code --wait"],
+  "mounts": [
+    // Custom component
+    // "source=${localEnv:HOME}/dev/custom_components/elprisetjustnu,target=${containerWorkspaceFolder}/config/custom_components/elprisetjustnu,type=bind"
+    //"source=/workspaces/elprisetjustnu,target=${containerWorkspaceFolder}/config/custom_components/elprisetjustnu,type=bind"
+    "source=H:\\Projekt\\ppn\\Home Assistant\\custom_components\\elprisetjustnu,target=${containerWorkspaceFolder}/config/custom_components/elprisetjustnu,type=bind"
+  ],
   "customizations": {
     "vscode": {
       "extensions": [
