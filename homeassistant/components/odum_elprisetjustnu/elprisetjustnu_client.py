@@ -145,15 +145,16 @@ class ElprisetJustNuClient:
         )
         try:
             async with self.session.get(u) as response:
-                if response.status == 404:
-                    return None
-                html = await response.text()
-                return self.getPricesFromJsonString(html)
-        except (asyncio.TimeoutError, aiohttp.ClientError):
+                if response.status == 200:
+                    html = await response.text()
+                    return self.getPricesFromJsonString(html)
+        except (asyncio.TimeoutError, aiohttp.ClientError) as aErr:
+            _LOGGER.error("Error %s", aErr)
             return None
         except Exception as err:  # pylint: disable=broad-except
             _LOGGER.error("Error %s", err)
             return None
+        return None
 
 
 def setup_client(username: str, password: str, session) -> ElprisetJustNuClient:
